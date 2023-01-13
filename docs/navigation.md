@@ -77,7 +77,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
-const MyStack = () => {
+const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -91,13 +91,15 @@ const MyStack = () => {
     </NavigationContainer>
   );
 };
+
+export default App;
 ```
 
 In this example, there are 2 screens (`Home` and `Profile`) defined using the `Stack.Screen` component. Similarly, you can define as many screens as you like.
 
 You can set options such as the screen title for each screen in the `options` prop of `Stack.Screen`.
 
-Each screen takes a `component` prop that is a React component. Those components receive a prop called `navigation` which has various methods to link to other screens. For example, you can use `navigation.navigate` to go to the `Profile` screen:
+Each screen takes a `component` prop that is a React component. Those components receive a prop called `navigation` which has various methods to link to other screens. For example, you can use `navigation.navigate` to go to the `Profile` screen: (Add these to your App.js)
 
 ```tsx
 const HomeScreen = ({navigation}) => {
